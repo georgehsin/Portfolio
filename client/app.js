@@ -6,10 +6,9 @@ myApp.config(function ($routeProvider) {
         templateUrl: 'partials/home.html',
         controller: 'loginCON'
     })
-    // .when('/new',{
-    //     templateUrl: 'partials/new.html',
-    //     controller: 'newcontroller'
-    // })
+    .when('/resume',{
+        templateUrl: 'partials/resume.html',
+    })
     .otherwise({
       redirectTo: '/'
     });

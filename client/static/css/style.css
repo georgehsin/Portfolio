@@ -56,6 +56,42 @@ footer.page-footer {
   margin: 0;
 }
 
+.nameheader {
+  margin-top: 120px;
+}
+
+.verticalcenter {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#title{
+  background-color: #0277bd;
+  height: 50px;
+}
+
+#title h4 {
+  font-weight: normal;
+  margin: 0 auto;
+}
+
+.aboutme {
+  margin-top: 40px
+}
+
+#moreaboutme {
+  margin-bottom: 20px;
+}
+
+.technology h5{
+  border-bottom: 2px solid #0277bd;
+}
+
+.technology p {
+  font-size: 18px;
+}
+
 .list li {
   display: inline;
 }
@@ -81,7 +117,7 @@ footer.page-footer {
 .parallaxtop {
 /*  position: relative;
   overflow: hidden;*/
-  height: 400px;
+  height: 300px;
 }
 
 .connect {
@@ -144,3 +180,29 @@ hr {
   font-style: italic;
   font-weight: 500;
 }
+
+#resumecontainer {
+  height:1200px;
+}
+
+#resume {
+  height: 1110px;
+  zoom: 100%;
+  -webkit-transform: scale(1);
+  -webkit-transform-origin: 0 0;
+}
+
+.projdesc {
+  text-align: left;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+h6 {
+  font-weight: 500;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
