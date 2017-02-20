@@ -11,6 +11,10 @@ nav .brand-logo {
   color: #444;
 }
 
+#sidenav-overlay {
+  z-index: 0;
+}
+
 p {
   line-height: 2rem;
 }
@@ -98,10 +102,6 @@ footer.page-footer {
 
 .header {
   font-size: 100px;
-}
-
-.carousel-item img{
-  border: 1px outset;
 }
 
 .sitelink {
@@ -205,4 +205,27 @@ h6 {
   margin-top: 30px;
   font-size: 20px;
 }
+/*
+============
+CAROUSEL CSS
+============
+*/
+.carousel-item img{
+  border: 1px outset;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  display: block;
+}
 
+.carousel .indicators {
+  bottom: -20px;
+}
+.carousel .indicators .indicator-item.active {
+  background-color: #0277bd;
+  border: 1px solid black;
+}
+
+.carousel .indicators .indicator-item {
+  border: 1px solid black;
+}

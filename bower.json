@@ -17,6 +17,7 @@
   "dependencies": {
     "angular": "^1.6.0",
     "angular-route": "^1.6.0",
-    "angular-materialize": "^0.2.2"
+    "angular-materialize": "^0.2.2",
+    "bxslider-4": "^4.2.7"
   }
 }

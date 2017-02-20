@@ -7558,8 +7558,8 @@ Picker.extend( 'pickadate', DatePicker )
         dist: -100, // zoom scale TODO: make this more intuitive as an option
         shift: 0, // spacing for center image
         padding: 0, // Padding between non center items
-        fullWidth: false, // Change to full width styles
-        indicators: false, // Toggle indicators
+        fullWidth: true, // Change to full width styles
+        indicators: true, // Toggle indicators
         noWrap: true, // Don't wrap around and cycle through items.
         onCycleTo: null // Callback for when a new slide is cycled to.
       };
