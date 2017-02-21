@@ -210,6 +210,12 @@ h6 {
 CAROUSEL CSS
 ============
 */
+.carousel-item {
+  min-width: 100%;
+  min-height: 100%;
+
+}
+
 .carousel-item img{
   border: 1px outset;
   max-width: 100%;
@@ -228,4 +234,8 @@ CAROUSEL CSS
 
 .carousel .indicators .indicator-item {
   border: 1px solid black;
+}
+
+.carousel-slider {
+    height: 400px !important;
 }
