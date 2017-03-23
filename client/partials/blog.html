@@ -1,0 +1,47 @@
+<div id="index-banner" class="parallax-container parallaxtop">
+	<div class="section no-pad-bot">
+	  <div class="container nameheader">
+	    <br><br>
+	    <h1 class="header center light-blue-text text-darken-3">George Hsin</h1>
+	    <br><br>
+
+	  </div>
+	</div>
+	<div parallax>
+	  <img id='img' src="./static/images/desktech.jpg" alt="Unsplashed background img 1">
+	</div>
+</div> 
+
+<div id="title">
+  <h4 class="center white-text verticalcenter">Blog</h4>  
+</div>
+
+<div class="container">
+	<div class="section">
+		<div class="row">
+			<div class="col s12 m6 offset-m3">
+				<form ng-submit="submit()">
+				        <input type="text" ng-model="blogPost.title" placeholder="Another Day, Another Adventure">
+				        <textarea type="text" ng-model="blogPost.post" placeholder="Do anything exciting today?"></textarea>
+				        <input type="hidden" ng-model="blogPost.likes" value=0>
+				        <input type="submit" value="Post">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div infinite-scroll='loadMore()' infinite-scroll-use-document-bottom='True'>
+<div class="container" ng-repeat="blog in reverse(post) | limitTo:limit">
+	<div class="section">
+		<div class="row">
+			<div class="col s12 m6 offset-m3">
+				<h3 class="center"> {{blog.title}}</h3>
+				<p> {{blog.post}}</p>
+				<button ng-click="delete(blog._id)">Delete Post</button> <div class="blogdate">{{blog.created_at}}</div>
+				<div class="divider"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div>

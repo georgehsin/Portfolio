@@ -1,10 +1,14 @@
-var myApp = angular.module('materializeApp', ['ngRoute', 'ui.materialize'])
+var myApp = angular.module('myApp', ['ngRoute', 'ui.materialize', 'infinite-scroll'])
     
 myApp.config(function ($routeProvider) {
     $routeProvider
     .when('/',{
         templateUrl: 'partials/home.html',
         controller: 'loginCON'
+    })
+    .when('/blog',{
+        templateUrl: 'partials/blog.html',
+        controller: 'blogCON'
     })
     .when('/resume',{
         templateUrl: 'partials/resume.html',

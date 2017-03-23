@@ -4,8 +4,8 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 var path = require('path');
 var models_path = path.join(__dirname, './../models');
-// mongoose.createConnection('mongodb://localhost/friendsAPI');
-// mongoose.connect('mongodb://localhost/friendsAPI');
+mongoose.createConnection('mongodb://localhost/portfolio');
+mongoose.connect('mongodb://localhost/portfolio');
 
 reg = new RegExp( ".js$", "i" ),
 

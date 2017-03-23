@@ -2,28 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <!-- <script src='../jquery/dist/jquery.min.js'></script> -->
-<!--     <script src='../angular/angular.js'></script>
-    <script src='../angular-route/angular-route.js'></script>
-    <script src='../angular-materialize/src/angular-materialize.js'></script>
-
-    <script src='app.js'></script>
-    <script src='controllers/loginCON.js'></script> -->
+  <meta charset="UTF-8">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="../materialize/dist/css/materialize.min.css" media="screen,projection"/>
+  <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>   
   
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css"/> -->
-    <link type="text/css" rel="stylesheet" href="../materialize/dist/css/materialize.min.css" media="screen,projection"/>
-    <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>   
-    
 
-    <title>George Hsin</title>
+  <title>George Hsin</title>
 </head>
 
-<body ng-app='materializeApp'>
+<body ng-app='myApp'>
 
   <div class="navbar-fixed">  
     <nav class="white" role="navigation">
@@ -46,11 +37,11 @@
       </div>
     </nav>
   </div>
+    <main>
+      <div ng-view>
 
-    <div ng-view>
-
-    </div>
-
+      </div>
+    </main>
   
   <footer class="page-footer light-blue darken-3">
     <div class="container">
@@ -86,10 +77,13 @@
   <script src='../angular-materialize/src/angular-materialize.js'></script>
   <script src="static/js/materialize.js"></script>
   <script src="static/js/init.js"></script>
-
+  <script src="../ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+  
   <script src='app.js'></script>
   <script src='controllers/loginCON.js'></script>
-
+  <script src='controllers/blogCON.js'></script>
+  <script src='factories/blogsfactory.js'></script>
+  
 </body>
 </html>
 
