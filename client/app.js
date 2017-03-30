@@ -8,7 +8,7 @@ myApp.config(function ($routeProvider) {
     })
     .when('/blog',{
         templateUrl: 'partials/blog.html',
-        controller: 'blogCON'
+        controller: 'blogCON',
     })
     .when('/resume',{
         templateUrl: 'partials/resume.html',

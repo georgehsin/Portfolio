@@ -1,4 +1,4 @@
-myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory, $route) {
+myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory, commentsFactory, $route) {
 
 	// sc.users = [];
     var index = function(){
@@ -11,9 +11,9 @@ myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory
     }
     index()
     $scope.submit = function(){
-      blogsFactory.create($scope.blogPost, function(){
-	 	$scope.blogPost = {}
-	 	index()
+        blogsFactory.create($scope.blogPost, function(){
+        	$scope.blogPost = {}
+        	index()
         })
  	}
 
@@ -52,6 +52,26 @@ myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory
         return month + ' ' + string.slice(8,10) + ', ' + string.slice(0,4)
     }
 
-
+// --------------------------------------------------
+// -------------------- COMMENTS --------------------
+// --------------------------------------------------
+    var indexComm = function(){
+        commentsFactory.index(function(data){
+            $scope.comments = data;
+        })
+    }
+    indexComm()
+    $scope.submitComment = function(id, comment){
+        commentsFactory.create(id, comment, function(){
+            comment.name = ''
+            comment.post = ''
+            indexComm()
+        })
+    }
+    $scope.deleteComm = function(id){
+        commentsFactory.delete(id, function(){
+        indexComm()
+        })
+    }
 
 });
