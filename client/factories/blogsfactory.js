@@ -16,6 +16,14 @@ myApp.factory('blogsFactory', ['$http', function($http) {
     		}
   		});
     }
+    this.show = function(id ,callback){
+      $http.get('/blog/' +id).then(function(returned_data){
+          console.log(returned_data.data);
+          if (typeof(callback) == 'function'){
+              callback(returned_data.data);
+          }
+      })
+    }; 
     this.delete = function(id, callback){
         $http.delete('/blog/'+id).then(function(returned_data){
             if (typeof(callback) == 'function'){

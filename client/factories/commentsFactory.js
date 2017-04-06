@@ -14,13 +14,13 @@ myApp.factory('commentsFactory', ['$http', function($http) {
           	callback(comment);
     		}
   		});
-    } 
+    }
     this.delete = function(id, callback){
-        $http.delete('/comment/'+id).then(function(returned_data){
-            if (typeof(callback) == 'function'){
-                callback(returned_data.data);
-            }
-        })
+      $http.delete('/comment/'+id).then(function(returned_data){
+          if (typeof(callback) == 'function'){
+              callback(returned_data.data);
+          }
+      })
     };
 
 	}

@@ -20,6 +20,12 @@ function BlogsController(){
       }
     })
   };
+  this.show = function(req,res){
+    Blog.findOne({_id: req.params.id}, function(err, result){
+
+      res.json(result);
+    })
+  };
   this.delete = function(req,res){
     Blog.remove({_id: req.params.id}, function(err){
       if(err){

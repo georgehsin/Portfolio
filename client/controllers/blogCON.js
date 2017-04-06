@@ -49,7 +49,8 @@ myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory
         }
         month = dict[string.slice(5,7)]
 
-        return month + ' ' + string.slice(8,10) + ', ' + string.slice(0,4)
+        return `${month} ${string.slice(8,10)}, ${string.slice(0,4)}`
+        // return month + ' ' + string.slice(8,10) + ', ' + string.slice(0,4)
     }
 
 // --------------------------------------------------

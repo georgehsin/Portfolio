@@ -38,27 +38,9 @@
 	<div class="section">
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
-				<h3 class="center"> {{blog.title}}</h3>
+				<h3 class="center"> <a href="#!/post/{{blog._id}}">{{blog.title}}</a></h3>
 				<p> {{blog.post}}</p>
 				<button ng-click="delete(blog._id)">Delete Post</button> <div class="blogdate">{{blog.created_at}}</div>
-				<div class="divider"></div>
-				<div id="comments">
-					<div ng-repeat="comment in comments">
-						<div ng-if='comment._poster == blog._id'>
-							{{comment.name}}:
-							{{comment.post}} <button ng-click="deleteComm(comment._id)">Delete Comment</button>
-						</div>
-						
-					</div>
-					<div>
-						<form ng-model="comment">
-						        <input type="text" ng-model="comment.name" placeholder="Name">
-						        <textarea type="text" ng-model="comment.post" placeholder="Comment"></textarea>
-						        <!-- <input type="hidden" ng-model="comment.likes" value=0> -->
-						        <button ng-click="submitComment(blog._id, comment)">Add Comment</button>
-						</form>
-					</div>
-				</div>
 				<div class="divider"></div>
 			</div>
 		</div>
