@@ -2,6 +2,7 @@ myApp.controller('postCON', function($scope, $location, $route, $routeParams, bl
 
 	var index = function(){
 		blogsFactory.show($routeParams.blog_id, function(data){
+            data.created_at = dateParser.dateformat(data.created_at)
 			$scope.blog = data
 		})
 	}()

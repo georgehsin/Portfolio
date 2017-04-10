@@ -1,10 +1,10 @@
 myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory, commentsFactory, $route) {
 
-	// sc.users = [];
+    console.log($rootScope.Admin)
     var index = function(){
         blogsFactory.index(function(data){
             for(var i = 0;i<data.length;i++){
-                data[i].created_at = dateformat(data[i].created_at)
+                data[i].created_at = dateParser.dateformat(data[i].created_at)
             }
             $scope.post = data;
         })
@@ -31,28 +31,6 @@ myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory
     $scope.loadMore = function() {
         $scope.limit += 5
     }
-
-    var dateformat = function(string){
-        dict = {
-            '01':'January',
-            '02':'February',
-            '03':'March',
-            '04':'April',
-            '05':'May',
-            '06':'June',
-            '07':'July',
-            '08':'August',
-            '09':'September',
-            '10':'October',
-            '11':'November',
-            '12':'December',
-        }
-        month = dict[string.slice(5,7)]
-
-        return `${month} ${string.slice(8,10)}, ${string.slice(0,4)}`
-        // return month + ' ' + string.slice(8,10) + ', ' + string.slice(0,4)
-    }
-
 // --------------------------------------------------
 // -------------------- COMMENTS --------------------
 // --------------------------------------------------

@@ -5,7 +5,7 @@
 			<div class="col s12 m6 offset-m3">
 				<h3 class="center"> <a href="#!/post/{{blog._id}}">{{blog.title}}</a></h3>
 				<p> {{blog.post}}</p>
-				<button ng-click="delete(blog._id)">Delete Post</button> <div class="blogdate">{{blog.created_at}}</div>
+				<button ng-click="delete(blog._id)" ng-show="Admin">Delete Post</button> <div class="blogdate">{{blog.created_at}}</div>
 				<div class="divider"></div>
 				<div id="comments">
 					<div ng-repeat="comment in comments">

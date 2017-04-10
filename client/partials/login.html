@@ -2,11 +2,31 @@
 	<div class="section">
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
-				<form ng-submit="submit()">
-				        <input type="text" ng-model="login.name" placeholder="Name">
+			<h1>Register</h1>
+				<form ng-submit="submit(register.$valid)" novalidate>
+				        <input type="text" ng-model="register.name" placeholder="Name" required>
+				        	<p ng-show="name">You name is required.</p>
+				        <input type="email" ng-model="register.email" placeholder="Email" required>
+				        <input type="password" ng-model="register.password" placeholder="Password" required>
+				        <input type="password" ng-model="register.confirm" placeholder="Confirm Password" required>
+				        	<p ng-show="nomatch">Passwords do not match.</p>
+				        <input type="submit" value="Register">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="section">
+		<div class="row">
+			<div class="col s12 m6 offset-m3">
+			<h1>Login</h1>
+				<form ng-submit="login()">
+				        <input type="text" ng-model="login.email" placeholder="Email">
 				        <input type="text" ng-model="login.password" placeholder="Password">
 				        <input type="text" ng-model="login.confirm" placeholder="Confirm Password">
-				        <input type="submit" value="Submit">
+				        <input type="submit" value="Login">
 				</form>
 			</div>
 		</div>

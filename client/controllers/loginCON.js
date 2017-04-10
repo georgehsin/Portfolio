@@ -1,15 +1,24 @@
 myApp.controller('loginCON', function($scope, $location, $rootScope, usersFactory, $route) {
 
-    // $scope.login = function (){
-    //     console.log($scope.user.name)
-    //     $rootScope.loggedUser = $scope.user.name
-    //     console.log($rootScope.loggedUser)
-    //     $location.url('/index')
-    // }
+    console.log($rootScope.Admin)
     $scope.submit = function(){
-    	console.log($scope.login)
-    	usersFactory.create($scope.login, function(){
-    		$scope.login = {}
-    	})
+    	// console.log($scope.register)
+    	// var info = $scope.register
+
+    	// $scope.name = validation(info.name)
+    	// console.log($scope.name)
+    	// // if (Boolean(info.name) === false){
+    	// // 	$scope.name = true
+    	// // }
+    	// if (info.pass !== info.confirm){
+    	// 	$scope.nomatch = true
+    	// }
+    	// if (false){
+    		usersFactory.create($scope.register, function(){
+	    		$rootScope.Admin = $scope.register.name
+	    		console.log($rootScope.Admin)
+	    		$scope.register = {}
+	    	})
+    	// }
     }
 });

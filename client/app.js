@@ -31,7 +31,7 @@ myApp.config(function ($routeProvider) {
 
 //     // register listener to watch route changes
 //     $rootScope.$on( "$locationChangeStart", function(event, next, current) {
-//         if ( $rootScope.loggedUser == null ) {
+//         if ( $rootScope.Admin == null ) {
 //             console.log('please log in');
 //             $location.url( "/" );
 //         }
