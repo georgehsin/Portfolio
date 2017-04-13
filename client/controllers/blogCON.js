@@ -1,5 +1,6 @@
 myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory, commentsFactory, $route) {
 
+    console.log($rootScope.Admin, $rootScope.User)
     var index = function(){
         blogsFactory.index(function(data){
             for(var i = 0;i<data.length;i++){
