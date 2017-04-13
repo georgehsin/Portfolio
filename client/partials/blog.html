@@ -21,29 +21,41 @@
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
 				<form ng-submit="submit()">
-				        <input type="text" ng-model="blogPost.title" placeholder="Another Day, Another Adventure">
-				        <textarea type="text" ng-model="blogPost.post" placeholder="Do anything exciting today?"></textarea>
-				        <input type="hidden" ng-model="blogPost.likes" value=0>
-				        <input type="submit" value="Post">
+			        <input type="text" ng-model="blogPost.title" placeholder="Another Day, Another Adventure">
+			        <textarea type="text" ng-model="blogPost.post" placeholder="Do anything exciting today?"></textarea>
+			        <input type="hidden" ng-model="blogPost.likes" value=0>
+			        <input type="submit" value="Post">
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
 
-
-
 <div infinite-scroll='loadMore()' infinite-scroll-use-document-bottom='True'>
 <div class="container" ng-repeat="blog in reverse(post) | limitTo:limit">
 	<div class="section">
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
-				<h3 class="center"> <a href="#!/post/{{blog._id}}">{{blog.title}}</a></h3>
-				<p> {{blog.post}}</p>
-				<button ng-click="delete(blog._id)" ng-show="Admin">Delete Post</button> <div class="blogdate">{{blog.created_at}}</div>
+				<div ng-show="updatingBlogID == blog._id">
+					<form ng-submit="submitUpdate(postUpdate._id, BlogUpdate)">
+						<input type="text" ng-model="BlogUpdate.title" ng-init="BlogUpdate.title='{{postUpdate.title}}'" value='{{postUpdate.title}}'>
+					    <textarea type="text" ng-model="BlogUpdate.post" ng-init="BlogUpdate.post='{{postUpdate.post}}'">{{postUpdate.post}}</textarea>
+					    <input type="submit" value="Update">
+					</form>
+				</div>
+				<div ng-hide="updatingBlogID == blog._id">
+					<h3 class="center"> <a href="#!/post/{{blog._id}}">{{blog.title}}</a></h3>
+					<p class="post">{{blog.post}}</p>
+					<button ng-click="delete(blog._id)" ng-show="Admin">Delete Post</button> 
+					<button ng-click="updatePost(blog)" ng-show="Admin">Update Post</button>
+					<a href="#!/post/{{blog._id}}"><button>Comment</button></a>
+					<div class="blogdate">{{blog.created_at}}</div>
+				<div>
+
 				<div class="divider"></div>
 			</div>
 		</div>
 	</div>
 </div>
 <div>
+

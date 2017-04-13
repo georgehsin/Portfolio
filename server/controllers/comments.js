@@ -11,9 +11,11 @@ function CommentsController(){
   };
 
   this.create = function(req,res){
+    console.log(req.body)
     Blog.findOne({_id: req.params.id}, function(err, post){
-        var comment = new Comment({name: req.body.name, post: req.body.post});
-        comment._poster = post._id
+        var comment = new Comment({name: req.body.name, post: req.body.post, userId: req.body.userId});
+        comment._post = post._id
+        comment._user = req.body.user
         post.comments.push(comment);
         comment.save(function(err){
           post.save(function(err){

@@ -1,10 +1,9 @@
 myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory, commentsFactory, $route) {
 
-    console.log($rootScope.Admin)
     var index = function(){
         blogsFactory.index(function(data){
             for(var i = 0;i<data.length;i++){
-                data[i].created_at = dateParser.dateformat(data[i].created_at)
+                data[i].created_at = moment.parseZone(data[i].created_at).local().format("MMMM Do, YYYY")
             }
             $scope.post = data;
         })
@@ -30,6 +29,20 @@ myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory
     $scope.limit = 5
     $scope.loadMore = function() {
         $scope.limit += 5
+    }
+
+    $scope.updatePost = function(blog){
+        $scope.updatingBlogID = blog._id
+        $scope.postUpdate = blog
+        $scope.update = true
+    }
+    $scope.submitUpdate = function(id, updatedPost){
+        $scope.update = false
+        blogsFactory.update(id, updatedPost, function(){
+            $scope.blogUpdate = {}
+            $scope.updatingBlogID = null 
+        })
+        index()
     }
 // --------------------------------------------------
 // -------------------- COMMENTS --------------------

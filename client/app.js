@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ui.materialize', 'infinite-scroll'])
+var myApp = angular.module('myApp', ['ngRoute', 'ui.materialize', 'infinite-scroll', 'angularMoment'])
     
 myApp.config(function ($routeProvider) {
     $routeProvider

@@ -4,24 +4,61 @@
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
 				<h3 class="center"> <a href="#!/post/{{blog._id}}">{{blog.title}}</a></h3>
-				<p> {{blog.post}}</p>
+				<p class="post"> {{blog.post}}</p>
 				<button ng-click="delete(blog._id)" ng-show="Admin">Delete Post</button> <div class="blogdate">{{blog.created_at}}</div>
 				<div class="divider"></div>
 				<div id="comments">
 					<div ng-repeat="comment in comments">
-						<div ng-if='comment._poster == blog._id'>
-							{{comment.name}}:
-							{{comment.post}} <button ng-click="deleteComm(comment._id)">Delete Comment</button>
+						<div class="comments" ng-if='comment._post == blog._id'>
+							<div>
+								<h6 class="block">{{comment.name.name}}:</h6>
+								<div class="block post">{{comment.post}}</div> <a class="alignRight" href='' ng-if="comment.name._id == _id" ng-click="deleteComm(comment._id)">remove comment</a>
+							</div>
 						</div>
-						
 					</div>
-					<div>
-						<form ng-model="comment">
-						        <input type="text" ng-model="comment.name" placeholder="Name">
-						        <textarea type="text" ng-model="comment.post" placeholder="Comment"></textarea>
-						        <!-- <input type="hidden" ng-model="comment.likes" value=0> -->
-						        <button ng-click="submitComment(blog._id, comment)">Add Comment</button>
+					<div style="margin-top: 50px;">
+						<form ng-hide="User" novalidate>
+							<div ng-hide="User">
+								<button ng-click="account = true; new = false;">Login</button>
+								<button ng-click="new = true; account = false;">Register</button>
+							</div>
+						<!-- Login -->
+							<div ng-show="account">
+								<input type="text" ng-model="login.email" placeholder="Email">
+					       		<input type="password" ng-model="login.password" placeholder="Password">
+					        		<p ng-show="invalid">Incorrect Email/Password Combination</p>
+					        	<!-- <input type="submit" value="Login"> -->
+					        	<button ng-click="loginForm()">Login</button>
+					        </div>
+						<!-- Login -->
+						<!-- Register -->
+							<div ng-show="new">
+						        <input ng-hide="User" type="text" ng-model="register.name" placeholder="Name" required>
+						        	<p ng-show="name">You name is required.</p>
+						        <input ng-hide="User" type="email" ng-model="register.email" placeholder="Email" required>
+						        	<p ng-show="email">Please enter a valid email.</p>
+						        <input ng-hide="User" type="password" ng-model="register.password" placeholder="Password" required>
+						        	<p ng-show="password">Password must be a minimum of 8 characters and include at least one number</p>
+						        <input ng-hide="User" type="password" ng-model="register.confirm" placeholder="Confirm Password" required>
+						        	<p ng-show="confirm">Passwords do not match.</p>
+						        	<p ng-show="empty">Please fill out the entire registration form.</p>
+						        	<button ng-click="submit()">Register</button>
+						    </div>
+					    <!-- Register -->
 						</form>
+					    <!-- COMMENTS -->
+					    <div>
+					    	<h5 class="block" ng-show="User">{{User}}</h5>
+					        <textarea class="block" type="text" ng-model="comment.post" placeholder="Comment"></textarea>
+								<p ng-show="loginRequired">Please login/Register to submit Comment.</p>
+					        <button ng-click="submitComment(blog._id, comment)">Add Comment</button>
+					    </div>
+					    <!-- /COMMENTS -->
+<!-- 						<form ng-model="comment">
+						        <textarea type="text" ng-model="comment.post" placeholder="Comment"></textarea>
+						        <input type="hidden" ng-model="comment.likes" value=0>
+						        <button ng-click="submitComment(blog._id, comment)">Add Comment</button>
+						</form> -->
 					</div>
 				</div>
 				<div class="divider"></div>

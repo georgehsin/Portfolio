@@ -1,24 +1,48 @@
 myApp.controller('loginCON', function($scope, $location, $rootScope, usersFactory, $route) {
-
-    console.log($rootScope.Admin)
+    
+    console.log($rootScope.User, $rootScope.Admin)
     $scope.submit = function(){
-    	// console.log($scope.register)
-    	// var info = $scope.register
-
-    	// $scope.name = validation(info.name)
-    	// console.log($scope.name)
-    	// // if (Boolean(info.name) === false){
-    	// // 	$scope.name = true
-    	// // }
-    	// if (info.pass !== info.confirm){
-    	// 	$scope.nomatch = true
-    	// }
-    	// if (false){
+    	var info = $scope.register
+    	$scope.empty = false
+    	if (info == undefined){
+    		$scope.empty = true;
+    		return;
+    	}
+    	$scope.name = validate.name(info.name);
+    	$scope.email = validate.email(info.email);
+    	$scope.password = validate.password(info.password);
+    	$scope.confirm = validate.confirm(info.password, info.confirm);
+    	var isValid = function(){
+    		for (var x in info){
+				if ($scope[x]){
+					return false;
+				}
+    		}
+    		return true;
+    	}()
+    	if (isValid){
     		usersFactory.create($scope.register, function(){
-	    		$rootScope.Admin = $scope.register.name
-	    		console.log($rootScope.Admin)
-	    		$scope.register = {}
-	    	})
-    	// }
+	    		$rootScope.User = $scope.register.name;
+	    		$scope.register = {};
+	    	});
+	    	$location.url('/blog');
+    	}
     }
+    $scope.loginForm = function(){
+    	console.log($scope.login)
+    	usersFactory.login($scope.login, function(data){
+            if(data.invalid){
+                $scope.invalid = true;
+            }
+            else{
+            	if (data.admin){
+            		$rootScope.Admin = data.name
+            	}
+                $rootScope.User = data.name;
+                $scope.invalid = false;
+                $location.url('/blog');
+            }
+    	});
+    }
+
 });

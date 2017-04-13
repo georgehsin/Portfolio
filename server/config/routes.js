@@ -8,7 +8,7 @@ module.exports = function(app){
   app.get('/blog', blog.index);
   app.post('/blog', blog.create);
   app.get('/blog/:id', blog.show);
-  // app.put('/blog/:id', blog.update);
+  app.post('/blog/:id', blog.update);
   app.delete('/blog/:id', blog.delete);
 
   app.get('/comment', comments.index);
@@ -16,4 +16,5 @@ module.exports = function(app){
   app.post('/comment/:id', comments.create);
 
   app.post('/user', user.create);
+  app.post('/userLogin', user.login);
 }

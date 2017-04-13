@@ -1,33 +1,41 @@
-<div class="container">
+<!-- <div class="container">
 	<div class="section">
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
 			<h1>Register</h1>
-				<form ng-submit="submit(register.$valid)" novalidate>
+				<form ng-submit="submit()" novalidate>
 				        <input type="text" ng-model="register.name" placeholder="Name" required>
 				        	<p ng-show="name">You name is required.</p>
 				        <input type="email" ng-model="register.email" placeholder="Email" required>
+				        	<p ng-show="email">Please enter a valid email.</p>
 				        <input type="password" ng-model="register.password" placeholder="Password" required>
+				        	<p ng-show="password">Password must be a minimum of 8 characters and include at least one number</p>
 				        <input type="password" ng-model="register.confirm" placeholder="Confirm Password" required>
-				        	<p ng-show="nomatch">Passwords do not match.</p>
+				        <input type="text" ng-model="register.admin" required>
+				        	<p ng-show="confirm">Passwords do not match.</p>
+				        	<p ng-show="empty">Please fill out the entire registration form.</p>
 				        <input type="submit" value="Register">
 				</form>
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="container">
 	<div class="section">
 		<div class="row">
-			<div class="col s12 m6 offset-m3">
-			<h1>Login</h1>
-				<form ng-submit="login()">
+			<div class="col s12 m6 offset-m3" ng-hide="User">
+				<h1>Login</h1>
+				<form ng-submit="loginForm()">
 				        <input type="text" ng-model="login.email" placeholder="Email">
-				        <input type="text" ng-model="login.password" placeholder="Password">
-				        <input type="text" ng-model="login.confirm" placeholder="Confirm Password">
+				        <input type="password" ng-model="login.password" placeholder="Password">
+				        	<p ng-show="invalid">Incorrect Email/Password Combination</p>
 				        <input type="submit" value="Login">
 				</form>
+			</div>
+			<div class="col s12 m6 offset-m3" ng-show="User">
+				<h1>Welcome {{User}}</h1>
+				<p>you are already logged in</p>
 			</div>
 		</div>
 	</div>
