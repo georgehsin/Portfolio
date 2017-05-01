@@ -164,6 +164,10 @@ a:visited {
   background:#0277bd;
 }
 
+.links {
+  margin-top: -30px;
+}
+
 hr {
   border-color: #0277bd;
   margin-top: 30px;

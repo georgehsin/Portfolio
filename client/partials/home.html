@@ -20,15 +20,15 @@
   </div>
 
   <div class="container aboutme">
-    <div class="section">
+    <div class="section" style="position: relative;">
       <div class="row">
-        <div class="col s12 m3 offset-m1">
-            <img src="./static/images/headshot.jpg" alt="" class="circle responsive-img">
+        <div class="col s4 offset-s1" style="position: absolute; top: 50%; transform: translateY(-50%);">
+            <img style="margin: 0 auto;" src="./static/images/headshot.jpg" alt="" class="circle responsive-img">
         </div>
 
-        <div class="col s12 m6 offset-m1">
+        <div class="col s6 offset-s6">
             <h5 class="center">Who Am I?</h5>
-            <p class="light">I am a full stack software engineer who strives to create applications that streamline our daily tasks so we can focus on the enjoyments life has to offer. What started out as a mere curiosity, soon became a career transition from finance once I learned what I could accomplish with programming. Quick to adopt new technologies, I am proficient in Python, MEAN stack, and iOS development. I specialize in developing web applications, with a preference in backend development.
+            <p class="light" style="text-align: center;">What excites me is the process of creating and realizing a product from what begins as a simple idea. As a developer, I can do just that and build out any ideas I have. I enjoy the process of tackling challenging problems, expressing my creativity while doing so, and being able to share the final results with others. I believe in constantly seeking new perspectives, allowing me to connect with others and gain new approaches to solving problems. I am a full stack engineer with a focus in JavaScript development utilizing the MEAN stack. However, I am always looking to learn new technologies and skills to improve and become a better programmer.
             </p>
         </div>
       </div>
@@ -71,8 +71,8 @@
             <h2 class="center brown-text"><img src="./static/images/programming-code-signs.png"></h2>
             <h5 class="center">Languages</h5>
             <div class="center">
-              <p class="light">Python</p>
               <p class="light">JavaScript</p>
+              <p class="light">Python</p>
               <p class="light">iOS/Swift</p>
             </div>
           </div>
@@ -83,11 +83,9 @@
             <h2 class="center brown-text"><img src="./static/images/computer-tower.png"></h2>
             <h5 class="center">Server</h5>
             <div class="center">
+              <p class="light">Node.js/Express.js</p>
               <p class="light">Django</p>
-              <p class="light">Express.js</p>
-              <p class="light">Node.js</p>
-              <p class="light">Flask</p>
-              <p class="light">Socket.io</p>
+              <p class="light">REST API</p>
             </div>
           </div>
         </div>
@@ -99,11 +97,8 @@
             <div class="center">
               <p class="light">Angular.js</p>
               <p class="light">jQuery</p>
-              <p class="light">AJAX</p>
-              <p class="light">HTML5</p>
-              <p class="light">CSS3</p>
-              <p class="light">Bootstrap</p>
-              <p class="light">Materialize</p>
+              <p class="light">HTML</p>
+              <p class="light">CSS</p>
             </div>
           </div>
         </div>
@@ -114,9 +109,7 @@
             <h5 class="center">Database</h5>
             <div class="center">
               <p class="light">MongoDB</p>
-              <p class="light">Mongoose</p>
-              <p class="light">SQL</p>
-              <p class="light">NoSQL</p>
+              <p class="light">MySQL</p>
             </div>
           </div>
         </div>
@@ -164,39 +157,45 @@
 
   <div class="container">
     <div class="section">
-
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-273send brown-text"></i></h3>
-          <div class="col s12 m4">
-          <a class="sitelink" href="http://54.201.19.147/"><h4>A Century of Names</h4></a>
-            <p class="projdesc">A Century of Names is a web application that contains a record of the most popular U.S. First names since 1910. With features to search, filter, randomly generate, and favorite names, finding the perfect name for your next child has never been easier!</p>
+          <div class="col s4">
+          <a class="sitelink" href="http://54.201.19.147/"><h4>Personal Tech Blog</h4></a>
+            <p class="projdesc">A personal tech blog that records the new Technologies, Algorithms, and resources I learn on a daily basis. Users can log in/register and comment on posts to join the daily adventure! </p>
+
+            <div class="links">
+              <div class="col s5">
+                <h6><a href="#!/blog">Project</a></h6>
+              </div>
+              <div class="col s2">
+                <h6>|</h6>
+              </div>
+              <div class="col s5">
+                <h6><a href="https://github.com/georgehsin/Portfolio">Github</a></h6>
+              </div>
+            </div>
+
             <hr>
-            <h6>Technologies Used</h6>
-            <ul class="list">
-              <li>Python |</li>
-              <li>Django |</li>
-              <li>MySQL |</li>
-              <li>Twython |</li>
-              <li>HTML |</li>
-              <li>CSS</li>
-            </ul>
+            <div class="col s12">
+              <h6>Technologies Used</h6>
+              <ul class="list">
+                  <li>| JavaSript |</li>
+                  <li>MongoDB |</li>
+                  <li>Node.js/Express.js |</li>
+                  <li>| Angular.js |</li>
+              </ul>
+            </div>
           </div>
           <div carousel class="col s12 m7 offset-m1 carousel carousel-slider center" data-indicators="true">
             <div class="carousel-item">
-              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name1.png"></a>
+              <a href="#!/blog"><img src="./static/images/blog_images/blog1.png"></a>
             </div>
             <div class="carousel-item">
-              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name4.png"></a>
+              <a href="#!/blog"><img src="./static/images/blog_images/blog2.png"></a>
             </div>
             <div class="carousel-item">
-              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name5.png"></a>
-            </div>
-            <div class="carousel-item">
-              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name6.png"></a>
-            </div>
-            <div class="carousel-item">
-              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name7.png"></a>
+              <a href="#!/blog"><img src="./static/images/blog_images/blog3.png"></a>
             </div>
           </div>
         </div>
@@ -211,23 +210,34 @@
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-273send brown-text"></i></h3>
-          <div class="col s12 m4">
-          <a class="sitelink" href="http://54.213.215.129/#!/"><h4>Mafia (Web)</h4></a>
+          <div class="col s4">
+            <a class="sitelink" href="http://54.213.215.129/#!/"><h4>Mafia (Web)</h4></a>
             <p class="projdesc">A web based version of the icebreaker game <a href="https://en.wikipedia.org/wiki/Mafia_(party_game)">Mafia.</a> With an integrated chat room and support for 5-12 players, players can now play the game anytime and anywhere.</p>
+            
+            <div class="links">
+              <div class="col s5">
+                <h6><a href="http://54.213.215.129/#!/">Project</a></h6>
+              </div>
+              <div class="col s2">
+                <h6>|</h6>
+              </div>
+              <div class="col s5">
+                <h6><a href="https://github.com/ryanjpan/mafia">Github</a></h6>
+              </div>
+            </div>
+
             <hr>
-            <h6>Technologies Used</h6>
-            <ul class="list">
-              <li>JavaSript |</li>
-              <li>Mongoose.js |</li>
-              <li>Express.js |</li>
-              <li>Angular.js |</li>
-              <li>Node.js |</li>
-              <li>Socket.io |</li>
-              <li>HTML |</li>
-              <li>CSS</li>
-            </ul>
+            <div class="col s12">
+              <h6>Technologies Used</h6>
+              <ul class="list">
+                <li>| JavaSript |</li>
+                <li>Node.js/Express.js |</li>
+                <li>Angular.js |</li>
+                <li>| Socket.io |</li>
+              </ul>
+            </div>
           </div>
-          <div carousel class="col s12 m7 offset-m1 carousel carousel-slider center" data-indicators="true">
+          <div carousel class="col s7 offset-s1 m7 offset-m1 carousel carousel-slider center" data-indicators="true">
             <div class="carousel-item">
               <a href="http://54.213.215.129/#!/"><img src="./static/images/mafia_images/mafia7.png"></a>
             </div>
@@ -254,17 +264,86 @@
         <div class="col s12 center">
           <h3><i class="mdi-content-273send brown-text"></i></h3>
           <div class="col s12 m4">
+          <a class="sitelink" href="http://54.201.19.147/"><h4>A Century of Names</h4></a>
+            <p class="projdesc">A Century of Names is a web application that contains a record of the most popular U.S. First names since 1910. With features to search, filter, randomly generate, and favorite names, finding the perfect name for your next child has never been easier!</p>
+            
+            <div class="links">
+              <div class="col s5">
+                <h6><a href="http://54.201.19.147/">Project</a></h6>
+              </div>
+              <div class="col s2">
+                <h6>|</h6>
+              </div>
+              <div class="col s5">
+                <h6><a href="https://github.com/jupigare/babynames">Github</a></h6>
+              </div>
+            </div>
+
+            <hr>
+            <div class="col s12">
+            <h6>Technologies Used</h6>
+              <ul class="list">
+                <li>| Python |</li>
+                <li>Django |</li>
+                <li>MySQL |</li>
+              </ul>
+            </div>
+          </div>
+          <div carousel class="col s12 m7 offset-m1 carousel carousel-slider center" data-indicators="true">
+            <div class="carousel-item">
+              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name1.png"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name4.png"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name5.png"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name6.png"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="http://54.201.19.147/"><img src="./static/images/names_images/name7.png"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-273send brown-text"></i></h3>
+          <div class="col s12 m4">
           <a class="sitelink" href="http://52.24.207.39/"><h4>Quotable Quotes</h4></a>
             <p class="projdesc">Share, view, and favorite quotes. With more features coming soon...</p>
+
+            <div class="links">
+              <div class="col s5">
+                <h6><a href="http://52.24.207.39/">Project</a></h6>
+              </div>
+              <div class="col s2">
+                <h6>|</h6>
+              </div>
+              <div class="col s5">
+                <h6><a href="https://github.com/georgehsin/pythonexam2">Github</a></h6>
+              </div>
+            </div>
+
             <hr>
-            <h6>Technologies Used</h6>
-            <ul class="list">
-              <li>Python |</li>
-              <li>Django |</li>
-              <li>MySQL |</li>
-              <li>HTML |</li>
-              <li>CSS</li>
-            </ul>
+            <div class="col s12">
+              <h6>Technologies Used</h6>
+              <ul class="list">
+                <li>| Python |</li>
+                <li>Django |</li>
+                <li>MySQL |</li>
+              </ul>
+            </div>
           </div>
         <div carousel class="col s12 m7 offset-m1 carousel carousel-slider center" data-indicators="true">
           <div class="carousel-item">
@@ -291,11 +370,23 @@
           <div class="col s12 m4">
           <a class="sitelink" href=""><h4>Beast TaskManager</h4></a>
             <p class="projdesc">Beast TaskManager is a minimalistic to-do list. Take control of your day by Beasting through your list one task at a time!</p>
+            
+            <div class="links">
+              <div class="col s2 offset-s5">
+                <h6>|</h6>
+              </div>
+              <div class="col s5">
+                <h6><a href="https://github.com/georgehsin/beast_taskmanager">Github</a></h6>
+              </div>
+            </div>
+
             <hr>
-            <h6>Technologies Used</h6>
-            <ul class="list">
-              <li>iOS</li>
-            </ul>
+            <div class="col s12">
+              <h6>Technologies Used</h6>
+              <ul class="list">
+                <li>| iOS |</li>
+              </ul>
+            </div>
           </div>
           <div carousel class="col s12 m7 offset-m1 center">
             <div class="carousel-item center">

@@ -3,7 +3,6 @@ var Blog = mongoose.model('Blog');
 var Comment = mongoose.model('Comment');
 function CommentsController(){
   this.index = function(req,res){
-    //your code here
     Comment.find({}, function(err, results){
 
       res.json(results);

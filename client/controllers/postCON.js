@@ -2,10 +2,10 @@ myApp.controller('postCON', function($scope, $location, $rootScope, $route, $rou
 
 	var index = function(){
 		blogsFactory.show($routeParams.blog_id, function(data){
-            data.created_at = dateParser.dateformat(data.created_at)
+            data.created_at = moment.parseZone(data.created_at).local().format("MMMM Do, YYYY")
 			$scope.blog = data
-		})
-	}()
+		});
+	}();
 
 	// --------------------------------------------------
 // -------------------- COMMENTS --------------------
@@ -28,14 +28,14 @@ myApp.controller('postCON', function($scope, $location, $rootScope, $route, $rou
             }
             commentsFactory.create(id, comment, function(){
                 comment.post = ''
-                indexComm()
-            })
+                indexComm();
+            });
         }
     }
     $scope.deleteComm = function(id){
         commentsFactory.delete(id, function(){
-        indexComm()
-        })
+        indexComm();
+        });
     }
 
 
@@ -70,7 +70,6 @@ myApp.controller('postCON', function($scope, $location, $rootScope, $route, $rou
         }
     }
     $scope.loginForm = function(){
-        console.log($scope.login)
         usersFactory.login($scope.login, function(data){
             if(data.invalid){
                 $scope.invalid = true;

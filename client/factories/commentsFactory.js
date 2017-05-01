@@ -8,7 +8,7 @@ myApp.factory('commentsFactory', ['$http', function($http) {
   		});
     }
 		this.create = function(id, comment, callback){
-  		$http.post('/comment/' +id, comment).then(function(returned_data){
+  		$http.post('/comment/'+id, comment).then(function(returned_data){
         if(typeof(callback)=='function'){
           	comment = returned_data.data;
           	callback(comment);

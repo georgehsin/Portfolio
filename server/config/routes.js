@@ -1,5 +1,3 @@
-console.log('routes');
-
 var blog = require('../controllers/blog.js');
 var comments = require('../controllers/comments.js');
 var user = require('../controllers/user.js');

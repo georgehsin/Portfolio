@@ -4,7 +4,9 @@ myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory
     var index = function(){
         blogsFactory.index(function(data){
             for(var i = 0;i<data.length;i++){
+                console.log(data[i])
                 data[i].created_at = moment.parseZone(data[i].created_at).local().format("MMMM Do, YYYY")
+                console.log(data[i])
             }
             $scope.post = data;
         })
