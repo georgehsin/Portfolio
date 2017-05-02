@@ -31,11 +31,11 @@
 	</div>
 </div>
 
-<div infinite-scroll='loadMore()' infinite-scroll-use-document-bottom='True'>
+<div>
 <div class="container" ng-repeat="blog in reverse(post) | limitTo:limit">
 	<div class="section">
 		<div class="row">
-			<div class="col s12 m6 offset-m3">
+			<div class="col s6 offset-s3">
 				<div ng-show="updatingBlogID == blog._id">
 					<form ng-submit="submitUpdate(postUpdate._id, BlogUpdate)">
 						<input type="text" ng-model="BlogUpdate.title" ng-init="BlogUpdate.title='{{postUpdate.title}}'" value='{{postUpdate.title}}'>
@@ -50,12 +50,19 @@
 					<button ng-click="updatePost(blog)" ng-show="Admin">Update Post</button>
 					<a href="#!/post/{{blog._id}}"><button>Comment</button></a>
 					<div class="blogdate">{{blog.created_at}}</div>
-				<div>
-
+				</div>
 				<div class="divider"></div>
 			</div>
 		</div>
 	</div>
 </div>
-<div>
 
+<div class="container">
+	<div class="section">
+		<div class="row">
+			<div class="col s6 offset-s3">
+				<button ng-click='loadMore()'>Load More</button>
+			</div>
+		</div>	
+	</div>	
+</div>

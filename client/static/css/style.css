@@ -11,6 +11,10 @@ nav .brand-logo {
   color: #444;
 }
 
+a {
+  color: #0277bd;
+}
+
 #sidenav-overlay {
   z-index: 0;
 }
@@ -79,6 +83,11 @@ footer.page-footer {
   font-weight: normal;
   margin: 0 auto;
 }
+
+.underline {
+  border-bottom: medium solid #0277bd;
+}
+
 
 .aboutme {
   margin-top: 40px
