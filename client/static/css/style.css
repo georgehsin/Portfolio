@@ -88,6 +88,21 @@ footer.page-footer {
   border-bottom: medium solid #0277bd;
 }
 
+#headshot {
+  /*margin: 0 auto;*/
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.vert_align_parent {
+  position: relative;
+}
+
+.vert_align_child {
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%);
+}
 
 .aboutme {
   margin-top: 40px
