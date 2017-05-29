@@ -3,9 +3,10 @@ var Blog = mongoose.model('Blog');
 
 module.exports = {
   index: function(req,res){
-    Blog.find({}, function(err, results){
-
-      res.json(results);
+    Blog.find().sort({'_id':-1}).then((result)=>{
+      res.json(result)
+    }).catch((err)=>{
+      console.log(err)
     });
   },
   create: function(req,res){

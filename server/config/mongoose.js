@@ -1,12 +1,10 @@
-console.log('mongo connection, mongoose setup');
-
 var mongoose = require('mongoose');
-var fs = require('fs');
-var path = require('path');
-var models_path = path.join(__dirname, './../models');
 mongoose.createConnection('mongodb://localhost/portfolio');
 mongoose.connect('mongodb://localhost/portfolio');
 
+var	fs = require('fs');
+		path = require('path');
+		models_path = path.join(__dirname, './../models');
 reg = new RegExp( ".js$", "i" ),
 
 fs.readdirSync( models_path ).forEach( function( file ) {
@@ -14,11 +12,6 @@ fs.readdirSync( models_path ).forEach( function( file ) {
     require( path.join( models_path, file ) );
   }
 });
-
-
-
-
-
 // mongoose.connection.on( 'connected', function () {
 //   console.log( `Mongoose default connection open to ${ dbURI }` );
 // });
