@@ -1,6 +1,7 @@
 myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory, commentsFactory, $route) {
 
-    console.log($rootScope.Admin, $rootScope.User)
+    $scope.limit = 5
+
     var index = function(){
         blogsFactory.index(function(data){
             for(var i = 0;i<data.length;i++){
@@ -13,22 +14,17 @@ myApp.controller('blogCON', function($scope, $location, $rootScope, blogsFactory
     $scope.submit = function(){
         console.log($scope.blogpost)
         blogsFactory.create($scope.blogPost, function(){
-        	$scope.blogPost = {}
-        	index()
+            $scope.blogPost = {}
+            index()
         })
- 	}
-
- 	$scope.delete = function(id){
- 		blogsFactory.delete(id, function(){
-	 	index()
-        })
- 	}
-    $scope.reverse = function(array) {
-        var copy = [].concat(array);
-        return copy.reverse();
     }
 
-    $scope.limit = 5
+    $scope.delete = function(id){
+        blogsFactory.delete(id, function(){
+        index()
+        })
+    }
+
     $scope.loadMore = function() {
         $scope.limit += 5
     }

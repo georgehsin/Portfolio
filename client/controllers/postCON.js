@@ -46,14 +46,14 @@ myApp.controller('postCON', function($scope, $location, $rootScope, $route, $rou
     $scope.submit = function(){
         var info = $scope.register
         $scope.empty = false
-        if (info == undefined){
-            $scope.empty = true;
-            return;
-        }
         $scope.name = validate.name(info.name);
         $scope.email = validate.email(info.email);
         $scope.password = validate.password(info.password);
         $scope.confirm = validate.confirm(info.password, info.confirm);
+        if (info == undefined){
+            $scope.empty = true;
+            return;
+        }
         var isValid = function(){
             for (var x in info){
                 if ($scope[x]){
